@@ -1,0 +1,186 @@
+/* ==========================================================================
+   Variables del sistema de diseño
+   ========================================================================== */
+
+:root {
+    /* Colores (tema oscuro tipo Excalidraw) */
+    --color-fondo: #121212;
+    --color-panel: #232329;
+    --color-borde: #2e2e2e;
+    --color-hover: #2e2d39;
+    --color-primario: #a8a5ff;
+    --color-texto: #e3e3e8;
+    --color-texto-suave: #9b9ba5;
+
+    /* Espaciado */
+    --espacio-xs: 0.5rem;
+    --espacio-sm: 0.75rem;
+    --espacio-md: 1rem;
+    --espacio-lg: 1.5rem;
+    --espacio-xl: 2rem;
+
+    /* Bordes */
+    --radio: 8px;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+h1,
+h2 {
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 1.75rem;
+}
+
+h2 {
+    font-size: 1.125rem;
+    color: var(--color-texto-suave);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Header y footer
+   ========================================================================== */
+
+header {
+    padding: var(--espacio-lg) var(--espacio-xl);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+header p {
+    margin: 0;
+    color: var(--color-texto-suave);
+}
+
+footer {
+    padding: var(--espacio-lg) var(--espacio-xl);
+    border-top: 1px solid var(--color-borde);
+    color: var(--color-texto-suave);
+}
+
+footer nav {
+    display: flex;
+    gap: var(--espacio-md);
+}
+
+footer a {
+    color: var(--color-primario);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   Layout principal
+   ========================================================================== */
+
+main {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: var(--espacio-xl);
+    padding: var(--espacio-xl);
+    align-items: start;
+}
+
+/* ==========================================================================
+   Controles
+   ========================================================================== */
+
+.controles {
+    background-color: var(--color-panel);
+    border-radius: var(--radio);
+    padding: var(--espacio-lg);
+}
+
+.control {
+    margin-bottom: var(--espacio-lg);
+}
+
+.control label {
+    display: block;
+    margin-bottom: var(--espacio-xs);
+    font-size: 0.875rem;
+    color: var(--color-texto-suave);
+}
+
+.control select {
+    width: 100%;
+    padding: var(--espacio-sm);
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: var(--radio);
+    cursor: pointer;
+}
+
+#generar {
+    width: 100%;
+    padding: var(--espacio-sm) var(--espacio-md);
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 600;
+    color: var(--color-fondo);
+    background-color: var(--color-primario);
+    border: none;
+    border-radius: var(--radio);
+    cursor: pointer;
+}
+
+#generar:hover {
+    filter: brightness(1.1);
+}
+
+/* Foco visible: lo pide la consigna */
+:focus-visible {
+    outline: 2px solid var(--color-primario);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Paleta
+   ========================================================================== */
+
+#contenedor-paleta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--espacio-md);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+        padding: var(--espacio-md);
+    }
+}
