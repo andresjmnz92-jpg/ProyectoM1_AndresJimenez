@@ -200,6 +200,7 @@ main {
 }
 
 .color__codigo {
+    white-space: nowrap;
     font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
     font-size: 0.8125rem;
     padding: 0.25rem 0.5rem;
