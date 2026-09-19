@@ -184,3 +184,31 @@ main {
         padding: var(--espacio-md);
     }
 }
+
+/* ==========================================================================
+   Tarjetas de color
+   ========================================================================== */
+
+.color {
+    display: flex;
+    align-items: flex-end;
+    min-height: 140px;
+    padding: var(--espacio-sm);
+    border-radius: var(--radio);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.color__codigo {
+    font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+    font-size: 0.8125rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #121212;
+}
+
+.color:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 24px rgba(255, 255, 255, 0.25);
+}
