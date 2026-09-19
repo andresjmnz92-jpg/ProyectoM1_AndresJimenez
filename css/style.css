@@ -213,3 +213,27 @@ main {
     transform: translateY(-4px);
     box-shadow: 0 0 24px rgba(255, 255, 255, 0.25);
 }
+
+/* ==========================================================================
+   Toast
+   ========================================================================== */
+
+#toast {
+    position: fixed;
+    bottom: var(--espacio-xl);
+    left: 50%;
+    transform: translateX(-50%) translateY(1rem);
+    padding: var(--espacio-sm) var(--espacio-lg);
+    border-radius: var(--radio);
+    background-color: var(--color-panel);
+    border: 1px solid var(--color-borde);
+    color: var(--color-texto);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+#toast.visible {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}

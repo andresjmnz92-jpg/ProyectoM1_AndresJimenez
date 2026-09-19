@@ -66,6 +66,7 @@ const contenedorPaleta = document.getElementById('contenedor-paleta');
 const selectTamano = document.getElementById('tamano');
 const selectFormato = document.getElementById('formato');
 const botonGenerar = document.getElementById('generar');
+const toast = document.getElementById('toast');
 
 // Pinta el estado actual en el DOM, según el formato elegido
 function renderizarPaleta() {
@@ -85,5 +86,31 @@ function renderizarPaleta() {
     });
 }
 
-generarPaleta(6);
+function mostrarToast(mensaje) {
+    toast.textContent = mensaje;
+    toast.classList.add('visible');
+
+    setTimeout(function () {
+        toast.classList.remove('visible');
+    }, 2000);
+}
+
+botonGenerar.addEventListener('click', function () {
+    generarPaleta(Number(selectTamano.value));
+    renderizarPaleta();
+    mostrarToast('Paleta generada');
+});
+
+selectTamano.addEventListener('change', function () {
+    generarPaleta(Number(selectTamano.value));
+    renderizarPaleta();
+    mostrarToast('Paleta generada');
+});
+
+selectFormato.addEventListener('change', function () {
+    renderizarPaleta();
+});
+
+generarPaleta(Number(selectTamano.value));
 renderizarPaleta();
+
