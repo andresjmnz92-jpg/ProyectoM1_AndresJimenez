@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Paletas | Colorfly Studio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Generador de Paletas</h1>
+        <p>Crea paletas de colores aleatorias para tus propuestas visuales.</p>
+    </header>
+
+    <main>
+        <section class="controles">
+            <h2>Configuración</h2>
+
+            <div class="control">
+                <label for="tamano">Tamaño de la paleta</label>
+                <select id="tamano">
+                    <option value="6">6 colores</option>
+                    <option value="8">8 colores</option>
+                    <option value="9">9 colores</option>
+                </select>
+            </div>
+
+            <div class="control">
+                <label for="formato">Formato del código</label>
+                <select id="formato">
+                    <option value="hsl">HSL</option>
+                    <option value="hex">HEX</option>
+                </select>
+            </div>
+
+            <button type="button" id="generar">Generar Paleta</button>
+        </section>
+
+        <section class="paleta">
+            <h2>Paleta Generada</h2>
+            <div id="contenedor-paleta"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Andrés Jiménez</p>
+        <nav>
+            <a href="https://github.com/andresjmnz92-jpg" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/aj1604/" target="_blank" rel="noopener">LinkedIn</a>
+        </nav>
+    </footer>
+
+    <div id="toast" role="status" aria-live="polite"></div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
